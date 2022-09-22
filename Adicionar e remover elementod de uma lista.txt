@@ -1,0 +1,72 @@
+//tenho a lista "Array"
+var times = ['Flamengo', 'Fortaleza', 'Liverpool', 'Real Madrid'];
+console.log(times[0]);
+console.log(times.length + " elementos na lista");
+//Adiciono um elemento na Array
+times[times.length] = 'Internazionale';
+console.log(times[4]);
+//Excluo um elemento da Array
+times.splice(2,0,'GabiGol');
+console.log(times[2]);
+console.log(times.length + " elementos na lista");
+
+
+//deletar
+
+//delete não apaga só deixa undefined!!
+delete times[2];
+console.log(times[2]);
+
+console.log(times.length + " elementos na lista");
+
+times.splice(2,1);
+console.log(times.length + " elementos na lista");
+console.log(times[2]);
+
+
+_________________________________________________________
+
+
+
+explicação:
+
+
+
+sso acontece porque esse método não remove o valor, apenas o torna indefinido (undefined). 
+
+Outros métodos para remover elementos do vetor
+A linguagem JavaScript possui, além de "delete", outros 4 métodos para remoção de elementos, conforme veremos a seguir:
+
+pop
+Este método, que não recebe parâmetros, remove um elemento do final do array, atualizando seu tamanho. Sua sintaxe é:
+
+frutas.pop();
+
+shift
+Embora similar ao pop, este método remove um elemento do início do array. Após a remoção, este é reindexado (ou seja, o elemento de índice 1 passa a ser o de índice 0 e assim sucessivamente). Além disso, o tamanho do array também é atualizado. Sua sintaxe pode ser vista a seguir:
+
+frutas.shift();
+
+splice
+Este método, introduzido anteriormente, pode ser usado para exclusão de elementos. Para tanto, ele recebe como parâmetros a quantidade de elementos que se deseja eliminar e o índice a partir do qual estes serão excluídos. A sintaxe a seguir demonstra a remoção de 2 elementos, a partir do índice 2, do array fornecido:
+
+var primos = [2,3,5,7,11,13,17];
+
+primos.splice(2,2);
+
+alert(primos); //imprimirá 2,3,11,13,17
+
+Nesse método, para fins de remoção, o primeiro parâmetro indica o índice e o segundo, a quantidade de elementos a serem excluídos.
+
+Outras formas de remover elementos do vetor
+Existem outras maneiras para excluir elementos de um array. Uma forma simples é determinar o tamanho, utilizando a propriedade length, do array. Isso fará com que este seja reduzido ao novo tamanho informado. Vejamos o exemplo prático:
+
+var primos = [2,3,5,7,11,13,17];
+
+alert(primos.length); //imprimirá 7
+
+primos.length = 4;
+
+alert(primos.length); //imprimirá 4
+
+Nesse exemplo, ao definirmos o tamanho do array como 4, este será reduzido, sendo mantidos os elementos do índice 0 ao 3 e excluídos os demais.

@@ -1,0 +1,60 @@
+package Loja;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import Interno.Teste;
+
+public class Eletro {
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		// Ler valor do produto e quantidade em estoque:
+		System.out.println("Diga o produto, preço e quantidade em estoque: ");
+		System.out.print("Nome: ");
+		String name = sc.nextLine();
+		System.out.print("Preço: ");
+		double preco = sc.nextDouble();
+		System.out.print("Quantidade no estoque: ");
+		int quantidade = sc.nextInt();
+		
+		/*
+        // Obrigando o construtor a ter um valor inicial:
+		Teste produto = new Teste(name, preco, quantidade);
+		System.out.println("Estoque : " + produto);*/
+		
+		// Obrigando o construtor a ter um valor inicial:
+		//Metodo Get e Set com variáveis PRIVATE.
+		Teste produto = new Teste(name, preco, quantidade);
+		produto.setName("Carro");
+		System.out.println("Nome atualizado do produto : " + produto.getName());
+		produto.setPreco(15000);
+		System.out.println("Preço atualizado : " + produto.getPreco());
+		
+		
+		//Não tem atualização do estoque pois só tem estoque de acordo com a inserção do usuário no código abaixo:
+		// Adicionar produtos ao estoque
+		System.out.println();
+		System.out.println("Digite um valor para adicionar ao estoque de produtos: ");
+		quantidade = sc.nextInt();
+		produto.adicionarPodutos(quantidade);
+
+		System.out.println();
+		System.out.println("Estoque atualizado: " + produto);
+
+		// Remoção de produtos do estoque
+		System.out.println();
+		System.out.println("Digite um valor para remover do estoque de produtos: ");
+		quantidade = sc.nextInt();
+		produto.removerPodutos(quantidade);
+
+		System.out.println();
+		System.out.println("Estoque atualizado: " + produto);
+		System.out.println();
+		System.out.println(produto);
+
+		sc.close();
+	}
+}

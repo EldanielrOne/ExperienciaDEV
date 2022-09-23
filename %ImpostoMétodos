@@ -1,0 +1,18 @@
+
+package Exercicio1;
+
+public class classedeTeste {
+	public String Name;
+	public double salario;
+	public double imposto;
+	
+	public double salarioLiquido() {
+		return salario - imposto;
+	}
+	public void somaDeSalario(double porcentagem) {
+		 salario += salario * porcentagem / 100.00;
+	}
+	public String toString(double CTeste) {
+		return Name + ", $ " + String.format("%2.f", salarioLiquido());
+	}
+}

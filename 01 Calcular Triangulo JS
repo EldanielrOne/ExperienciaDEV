@@ -1,0 +1,31 @@
+const lado1 = document.querySelector("#lado1");
+const lado2 = document.querySelector("#lado2");
+const lado3 = document.querySelector("#lado3");
+const resultado = document.querySelector("#resultado");
+const btn = document.querySelector("#calcular");
+const aviso = document.querySelector("#aviso");
+
+
+
+
+btn.onclick = () => {
+
+     if (lado1.value != '' && lado2.value != '' & lado3.value != '') {
+          if (lado1.value < 0 || lado1 > 50 || lado2.value < 0 || lado2 > 50 || lado3.value < 0 || lado3 > 50) {
+               resultado.value == "";
+               aviso.innerText = "Somente valores entre 0 e 50";
+          } else {
+               aviso.innerText = "";
+               if (lado1.value == lado2.value && lado2.value == lado3.value) {
+                    resultado.value = 'Triângulo equilátero';
+               } else if (lado1.value == lado2.value || lado1.value == lado3.value || lado3.value == lado2.value) {
+                    resultado.value = 'Triângulo isóceles';
+               } else {
+                    resultado.value = 'Triângulo escaleno';
+               }
+          }
+     } else {
+          aviso.innerText = 'Uma das medidas não foi informada!'
+          resultado.value = '';
+     }
+}

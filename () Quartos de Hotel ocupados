@@ -1,0 +1,44 @@
+package Vetores;
+
+import java.util.Locale;
+import java.util.Scanner;
+import metodosVetores.MetodoRent;
+
+public class Hotel {
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		MetodoRent[] vetor = new MetodoRent[10];
+		
+		System.out.print("Quantos quartos serão alugados? ");
+		int quantidadeDeQuartos = sc.nextInt();		
+		
+		for(int i = 1;i <= quantidadeDeQuartos;i++) {
+			System.out.println("Quarto número: " + i);
+			System.out.print("Nome: ");
+			sc.nextLine();
+			String name = sc.nextLine();	
+			System.out.print("Email: ");
+			String email = sc.next();
+			System.out.print("Quarto: ");
+			int numeroQuarto = sc.nextInt();
+			
+			vetor[numeroQuarto] = new MetodoRent(name, email);
+			
+			}
+		
+			System.out.println();
+			System.out.println("Quartos ocupados ");
+			for(int i = 0;
+				i < 10;
+				i++) {
+					if(vetor[i] != null) {
+					System.out.println(i + ": " + vetor[i]);
+					}
+			}
+		
+		sc.close();
+		}
+}

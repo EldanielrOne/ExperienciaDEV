@@ -1,0 +1,68 @@
+package SistemaBancario;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import ContaBancaria.Account;
+
+public class sistema {
+	
+	public static void main (String[]  args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Account conta;
+		
+		
+		//Criação da Conta Bancária:
+		System.out.print("Diga o número da sua Conta: "); 
+		int numberAccount = sc.nextInt();
+		
+		
+		System.out.print("Digite o nome completo do Titular da Conta "); 
+		sc.nextLine();
+		String ownerAccount = sc.nextLine();
+		
+		
+		System.out.print("Deseja realizar um depósito incial na conta? S ou N ? "); 
+		char simOuNao = sc.next().charAt(0);
+		
+		
+		if(simOuNao == 's' || simOuNao == 'S') {
+			System.out.print("Quanto você quer depositar inicialmente? Digite o valor exato: ");
+			double deposito = sc.nextDouble();
+			 conta = new Account(ownerAccount, numberAccount, deposito);
+			 
+		}else {
+			conta = new Account(ownerAccount, numberAccount);
+		}
+		
+		//Println para dar espaço para baixo:
+		System.out.println();
+		System.out.println(conta);
+		System.out.println();
+		
+		System.out.print("Digite um valor para depósito: ");
+		double deposito = sc.nextDouble();	
+		conta.depositoBancario(deposito);
+		System.out.println();
+		System.out.print("Dados Atualizados da sua conta agora é: ");
+		System.out.print(conta);
+		
+		System.out.println();
+		System.out.print("Deseja realizar um saque? digite o valor: ");
+		double saque = sc.nextDouble();
+		conta.saqueBancario(saque);
+		
+		
+		System.out.print("Dados Atualizados da sua conta agora é: ");
+		System.out.print(conta);
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Acabou o processo da sua conta!");
+		sc.close();
+	}
+
+}

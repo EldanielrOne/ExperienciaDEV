@@ -1,0 +1,29 @@
+const nota = document.querySelector("#nota");
+const resultado = document.querySelector("#status");
+const btn = document.querySelector("#consulta");
+const aviso = document.querySelector("#aviso");
+
+
+
+
+btn.onclick = () => {
+     // Passa o valor recebido de String para inteiro.
+     var valorNum = parseInt(nota.value);
+     if (valorNum) {
+          aviso.innerText = "";
+          if (valorNum > 37) {
+               if (valorNum % 5 > 2) {
+                    resultado.value = "Sua nota foi " + (valorNum + (5 - (valorNum % 5))) + ", está Aprovado!";
+               }
+               else {
+                    resultado.value = "Sua nota foi " + valorNum + ", está Aprovado!";
+               }
+          } else {
+               resultado.value = "Sua nota foi " + valorNum + ", está Reprovado!";
+          }
+     } else {
+          aviso.innerText = "Uma nota precisa ser informada!";
+          resultado.value = "";
+
+     }
+}

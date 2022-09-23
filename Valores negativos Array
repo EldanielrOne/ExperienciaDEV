@@ -1,0 +1,43 @@
+package Vetores;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class ExercicioFixacao {  //Exercicio dos numeros negativos:
+	
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		
+		System.out.print("Quantos números irá digitar? ");
+		int n = sc.nextInt();
+		int[] vetor = new int[n];//vetor recebe o valor de n e Faz o armazenamento de memorias com o valor n
+		
+		if(n >= 0 && n <=10 ) {
+			//usuário digita o número repetidamente até chegar na quantidade de n
+			for(int i=0; i<vetor.length; i++) {
+				System.out.print("Digite um número: ");
+				vetor[i] = sc.nextInt();
+			}
+			
+			System.out.println("Números negativos digitados: "); // não coloquei esse print dentro do FOR pra não aparecer repetidamente na tela.
+			for(int i=0; i<vetor.length; i++) {
+			if(vetor[i] < 0) {//If verifica os valores negativos e em seguida printa na tela.
+				System.out.println(vetor[i]);
+			}
+		}
+			
+			
+		}else {
+			System.out.println("Por favor apenas valor positivo e até 10.");
+		}
+		
+		
+		sc.close();
+	}
+	
+}

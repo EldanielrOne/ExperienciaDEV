@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01 - Tipos de Triângulo</title>
+    <link rel="stylesheet" href="teste.css">
+</head>
+
+<body>
+    <main>
+        <h1>Operação Triangulo C3C</h1>
+        <label>Lado 1:</label>
+        <input type="number" name="lado1" id="lado1" min="0" max="30" />
+        <label>Lado 2:</label>
+        <input type="number" name="lado2" id="lado2" min="0" max="30" />
+        <label>Lado 3:</label>
+        <input type="number" name="lado3" id="lado3" min="0" max="30" />
+        <button id="calcular">Calcular Triângulo</button>
+        <label>Resultado:</label>
+        <input type="text" name="resultado" id="resultado" disabled />
+        <div id="aviso"></div>
+        <script src="testeSelecao.js"></script>
+    </main>
+</body>
+
+</html>

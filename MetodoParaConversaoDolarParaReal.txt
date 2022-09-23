@@ -1,0 +1,11 @@
+package Exercicio1;
+
+public class classedeTeste {
+	public double valorDoDolar;
+	public double quantidadeDeDolares;
+	public double imposto = 6.00 * valorDoDolar / 100.00;
+	
+	public double valorEmRealComImposto() {
+		return valorDoDolar * quantidadeDeDolares + imposto;
+	}
+}

@@ -1,1 +1,33 @@
 
+
+<!DOCTYPE html>
+<html lang="ptBR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01 - Tipos de Triângulo</title>
+    <link rel="stylesheet" href="teste.css">
+</head>
+
+<body>
+    <main>
+        <h1>Operação Lista C3C</h1>
+        <label>Digite um Número</label>
+        <input type="number" name="valor" id="valor" min="0" max="1000" />
+        <br />
+        <br />
+        <button id="calcule">Calcular</button>
+        <br />
+        <br />
+        <label>Resultado:</label> <input type="text" name="resultado" id="resultado" disabled />
+        <br />
+        <div id="aviso"></div>
+
+
+        <script src="testeSelecao.js"></script>
+        <main />
+</body>
+
+</html>

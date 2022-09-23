@@ -1,0 +1,65 @@
+package Interno;
+
+public class Teste {
+
+	private String name;
+	private double preco;
+	private int quantidade;
+
+	//Construtor
+	public Teste(String name, double preco, int quantidade) {
+		this.name = name;
+		this.preco = preco;
+		this.quantidade = quantidade;
+
+	}
+
+	//Método que mostra o valor total do estoque
+	public double valorTotalEmEstoque() {
+		return preco * quantidade;
+	}
+
+	
+	//Método que adiciona produtos
+	public void adicionarPodutos(int quantidade) {
+		this.quantidade += quantidade;
+	}
+	
+	
+	//Método para remover produtos do estoque
+	public void removerPodutos(int quantidade) {
+		this.quantidade -= quantidade;
+	}
+	
+	
+	//Metodo para acessar variável PRIVATE
+	public String getName() {
+		return name;
+	}
+	//Método para Modificar valor da variável PRIVATE
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+	//Metodo para acessar variável PRIVATE
+	public double getPreco() {
+		return preco;
+	}
+	//Método para Modificar valor da variável PRIVATE
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+
+
+	public String toString() {
+		return "Nome: " 
+	+ name 
+	+ ", Preço unitário: " 
+	+ String.format("%.2f", preco) 
+	+ " Preço total: "			
+	+ String.format("%.2f", valorTotalEmEstoque());
+	}
+}

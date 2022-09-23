@@ -1,0 +1,32 @@
+package Exercicio1;
+
+import java.util.Locale;
+import java.util.Scanner;
+public class perimetrooring {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		classedeTeste CTeste = new classedeTeste();
+		//Leia os valores
+
+		
+		
+		System.out.print("Quanto está um dólar? ");
+		CTeste.valorDoDolar = sc.nextDouble();
+		System.out.print("Quantos dólares você quer? ");
+		CTeste.quantidadeDeDolares = sc.nextDouble();
+		
+		
+		
+		System.out.println();
+		System.out.println("Preço a pagar em real é: " + CTeste.valorEmRealComImposto());
+		
+		
+		
+		
+		sc.close();
+	}
+
+}

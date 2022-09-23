@@ -1,0 +1,70 @@
+package ContaBancaria;
+
+public class Account {
+	private String ownerAccount;
+	public char simOuNao;
+	private double saldoBancario;
+	private double taxaDeSaque = 5.00;
+	private int numberAccount;
+	
+	
+	
+	
+	
+	public Account(String ownerAccount, int numberAccount, double depositoInicial) {
+		this.ownerAccount = ownerAccount;
+		this.numberAccount = numberAccount;
+		depositoBancario(depositoInicial);
+		
+		
+	}
+	
+	public Account(String ownerAccount, int numberAccount) {
+		this.ownerAccount = ownerAccount;
+		this.numberAccount = numberAccount;
+	}
+	
+
+
+	public String getOwnerAccount() {
+		return ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+	}
+
+	public double getTaxaDeSaque() {
+		return taxaDeSaque;
+	}
+
+	public int getNumberAccount() {
+		return numberAccount;
+	}
+	
+	public double getSaldoBancario() {
+		return saldoBancario;
+	}
+
+
+	public void depositoBancario(double valorDepositado) {
+		  saldoBancario = saldoBancario + valorDepositado;
+	}
+	
+	public double saqueBancario(double valorRetirado) {
+		return saldoBancario = saldoBancario - valorRetirado - taxaDeSaque;
+	}
+	
+	
+	public String toString() {
+		return "Nome: " 
+	+ ownerAccount 
+	+ ", Número da conta: " 
+	+  numberAccount
+	+ ", e o saldo disponível na conta é: " 			
+	+  String.format("%.2f",saldoBancario);
+	}
+	
+	
+
+}

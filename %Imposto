@@ -1,0 +1,39 @@
+
+package Exercicio1;
+
+import java.util.Locale;
+import java.util.Scanner;
+import Exercicio1.classedeTeste;
+public class perimetrooring {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		classedeTeste CTeste = new classedeTeste();
+		//Leia os valores
+
+		
+		
+		System.out.print("Name: ");
+		CTeste.Name = sc.nextLine();
+		System.out.print("Salário Bruto: ");
+		CTeste.salario = sc.nextDouble();
+		System.out.print("Imposto: ");
+		CTeste.imposto = sc.nextDouble();
+		
+		System.out.println();
+		System.out.println("valor liquido de " + CTeste.Name + ", é: $ "  + CTeste.salarioLiquido());
+		System.out.println();
+		System.out.print("Qual a porcentagem a ser adicionada ao seu salário? ");
+		double porcentagem = sc.nextDouble();
+		CTeste.somaDeSalario(porcentagem);
+		System.out.println();
+		System.out.println("Salário liquido atualizado: " + CTeste.salarioLiquido());
+		
+		
+		
+		sc.close();
+	}
+
+}

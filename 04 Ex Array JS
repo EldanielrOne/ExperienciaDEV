@@ -1,0 +1,34 @@
+
+const valor = document.querySelector("#valor");
+const botao = document.querySelector("#calcule")
+const resultado = document.querySelector("#resultado");
+const aviso = document.querySelector("#aviso");
+
+
+
+botao.onclick = () => {
+     const valorInteiro = parseInt(valor.value);
+     const result = [];
+     if (valorInteiro) {
+          aviso.innerText = '';
+          for (var i = 1; i <= valorInteiro; i++) {
+               if (i % 5 == 0 && i % 9 == 0) {
+                    result.push('LuidyMoura');
+                    resultado.value = result;
+               } else if (i % 9 == 0) {
+                    result.push('Moura');
+                    resultado.value = result;
+               } else if (i % 5 == 0) {
+                    result.push('Luidy');
+                    resultado.value = result;
+               } else {
+                    result.push(i);
+                    resultado.value = result;
+               }
+          }
+     } else {
+          aviso.innerText = 'Uma valor precisa ser informada!';
+          resultado.value = '';
+     }
+
+}

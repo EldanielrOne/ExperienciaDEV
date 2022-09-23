@@ -1,0 +1,34 @@
+
+const valor1 = document.querySelector("#valor1");
+const valor2 = document.querySelector("#valor2");
+const valor3 = document.querySelector("#valor3");
+const resultado1 = document.querySelector("#resultado1");
+const resultado2 = document.querySelector("#resultado2");
+const calcular = document.querySelector("#calcule");
+const aviso = document.getElementById("aviso");
+
+
+
+calcular.onclick = () => {
+     var a = parseInt(valor1.value);
+     var b = parseInt(valor2.value);
+     var c = parseInt(valor3.value);
+
+     if (a && b && c) {
+          aviso.innerText = "";
+          var delta = b * b - 4 * a * c;
+          if (delta >= 0) {
+               resultado1.value = (-b + Math.sqrt(delta)) / (2 * a);
+               resultado2.value = (-b - Math.sqrt(delta)) / (2 * a);
+          } else {
+               resultado1.value = "Delta é negativo";
+               resultado2.value = "Delta é negativo";
+
+          }
+
+     } else {
+          aviso.innerText = "Insira todos os valores!";
+          resultado1.value = '';
+          resultado2.value = '';
+     }
+}

@@ -1,0 +1,48 @@
+/*Questão: Faça um programa para ler dois vetores A e B, contendo N elementos cada. Em seguida, gere um 
+terceiro vetor C onde cada elemento de C é a soma dos elementos correspondentes de A e B. Imprima 
+o vetor C gerado.  */
+
+
+package Vetores;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class ExercicioFixacao {  //Exercicio dos numeros negativos:
+	
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		
+		System.out.print("Quantos números irá digitar? ");
+		int valor = sc.nextInt();
+		int[] vetorA = new int[valor];//vetor recebe o valor de valor e Faz o armazenamento de memorias com o valor n
+		int[] vetorB = new int[valor];
+		int[]vetorC = new int[valor];
+		System.out.println();
+		
+		for(int i = 0; i < valor; i++) {
+			System.out.print("Digite os valores de A: ");
+			vetorA[i] = sc.nextInt();
+		}
+		System.out.println();
+		for(int i = 0; i < valor; i++) {
+			System.out.print("Digite os valores de B: ");
+			vetorB[i] = sc.nextInt();
+		}
+		System.out.println();
+		for(int i = 0; i < valor; i++) {
+			System.out.print("Valores Resultantes: ");
+			vetorC[i] = vetorA[i] + vetorB[i];
+			System.out.println(vetorC[i]);
+		}
+		
+		
+		sc.close();
+	}
+	
+}

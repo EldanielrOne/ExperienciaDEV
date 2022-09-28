@@ -1,0 +1,61 @@
+package Lista;
+
+public class testing {
+	private int ID;
+	private String Nome;
+	private double Salario;
+	
+	
+	public testing(int iD, String nome, double salario) {
+		
+		ID = iD;
+		Nome = nome;
+		Salario = salario;
+	}
+
+
+	public int getID() {
+		return ID;
+	}
+
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+
+	public String getNome() {
+		return Nome;
+	}
+
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+
+	public double getSalario() {
+		return Salario;
+	}
+
+
+	public void setSalario(double salario) {
+		Salario = salario;
+	}
+	
+	public void aumentoDeSalario(double Porcentagem) {
+		Salario = Salario + Salario * Porcentagem / 100;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ID: " +
+	ID +
+	", Nome: " +
+	Nome +
+	", Salario: " +
+	Salario;
+	}
+	
+}

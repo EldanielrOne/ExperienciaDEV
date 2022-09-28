@@ -1,0 +1,76 @@
+package Lista;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class NovaLista {
+public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		List<Object> funcionarios = new ArrayList<>();
+		System.out.print("Quantos funcionários serão registrados? ");
+		int quantidadeDeFuncionarios = sc.nextInt();
+		
+		System.out.println();
+		
+		for(int i=0; i<quantidadeDeFuncionarios; i++) {
+			System.out.println("Funcionário número "+ (i + 1));
+			
+			System.out.print("Digite o ID do funcionário: ");
+			int ID = sc.nextInt();
+			System.out.print("Digite o Nome do funcionário: ");
+			sc.nextLine();
+			String Nome = sc.nextLine();
+			System.out.print("Digite o Salário do funcionário: ");
+			double Salario = sc.nextDouble();
+			
+		
+			
+			testing funcionario = new testing(ID, Nome, Salario);
+			funcionarios.add(funcionario);
+			
+		}
+		
+		System.out.print("Qual ID do funcionário que terá aumento no salário? ");
+		int idSalario = sc.nextInt();
+		Integer pos = PosicaoID(funcionarios, idSalario);
+		if(pos == -1) {
+			System.out.println("Este ID não existe meu amigo. Verfique!");
+		}else {
+			System.out.print("Qual a porcentagem para o aumento? ");
+			double Porcentagem = sc.nextDouble();
+			((testing) funcionarios.get(pos)).aumentoDeSalario(Porcentagem);
+		}
+		
+		System.out.println();
+		System.out.println("Lista de funcionários:");
+		for(Object func : funcionarios) {
+			System.out.println(func);
+		}
+		
+		
+		sc.close();
+} 
+
+
+
+
+//Essa lista não é a mesma que a lá de cima por que está fora do Main.
+	public static Integer PosicaoID(List<Object> funcionarios, int iD) {
+		for(int i=0; i<funcionarios.size(); i++) {//Verifica a posição do ID na lista
+			if(((testing) funcionarios.get(i)).getID()== iD) {
+				return i; //Retorna se o ID existir na lista
+			}
+		}
+		return -1;//Retorna se o ID não existir na lista
+	}
+
+
+
+
+}
